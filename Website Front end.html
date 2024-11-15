@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Pending Fee Report</title>
+    <style>
+        /* Reset and general styling */
+        * 
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://files.yappe.in/place/full/pulimathoor-mahadeva-temple-9984549.webp'); /* Replace with your image URL */
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling of the image */
+        }
+        h2, h3 {
+            color: #4a90e2;
+        }
+
+
+        /* Form styling */
+        #checkForm {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+        }
+        #checkForm label {
+            font-size: 1.1em;
+        }
+        #checkForm select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        #checkForm button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #checkForm button:hover {
+            background-color: #357abd;
+        }
+
+        /* PDF Section styling */
+        #pdfSection {
+            margin-top: 40px;
+            display: none;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            line-height: 50px;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            display:block;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="checkForm" class="input-name">
+        <h2>Student's Pending Fee Report</h2>
+        <form>
+            <label for="studentId">Select Student Name:</label>
+            <select id="studentId" required>
+                <option value="" disabled selected>Select Name</option>
+                <option value="ABHAYJITH">ABHAYJITH</option>
+                <option value="ABHIJITH">ABHIJITH</option>
+                <option value="ABHIMANYU">ABHIMANYU</option>
+                <option value="ABHINAV KIRAN">ABHINAV KIRAN</option>
+                <option value="ADIDEV S G">ADIDEV S G</option>
+                <option value="ADIRATH">ADIRATH</option>
+                <option value="ADITHAYAN A S">ADITHAYAN A S</option>
+                <option value="ADITHYA A ABHILASH">ADITHYA A ABHILASH</option>
+                <option value="ADITHYAN A">ADITHYAN A</option>
+                <option value="ADITHYAN B S">ADITHYAN B S</option>
+                <option value="ADITHYAN R S">ADITHYAN R S</option>
+                <option value="ADITHYAN S M">ADITHYAN S M</option>
+                <option value="ADWAITH">ADWAITH</option>
+                <option value="ADWAITH R P">ADWAITH R P</option>
+                <option value="AKHIL B">AKHIL B</option>
+                <option value="AKHIL SANTHOSH">AKHIL SANTHOSH</option>
+                <option value="ANANTHAKRISHNAN S">ANANTHAKRISHNAN S</option>
+                <option value="ANU">ANU</option>
+                <option value="ARAV SHANKAR A">ARAV SHANKAR A</option>
+                <option value="ARAVIND">ARAVIND</option>
+                <option value="ARJUN R">ARJUN R</option>
+                <option value="ARUSH P R">ARUSH P R</option>
+                <option value="ARYA A">ARYA A</option>
+                <option value="ASWANTH B">ASWANTH B</option>
+                <option value="ASWIN R">ASWIN R</option>
+                <option value="ASWIN V">ASWIN V</option>
+                <option value="ATHUL A M">ATHUL A M</option>
+                <option value="ATHUL A S">ATHUL A S</option>
+                <option value="DEVA NAND PRADEEP">DEVA NAND PRADEEP</option>
+                <option value="DEVA NARAYANAN">DEVA NARAYANAN</option>
+                <option value="DEVANANDA P">DEVANANDA P</option>
+                <option value="DEVA NAND M R">DEVA NAND M R</option>
+                <option value="DIPIN D">DIPIN D</option>
+                <option value="DRUV HARI M">DRUV HARI M</option>
+                <option value="DYAN HARI M">DYAN HARI M</option>
+                <option value="GURUMITHRAN D L">GURUMITHRAN D L</option>
+                <option value="JANADATHAN D L">JANADATHAN D L</option>
+                <option value="KASHINADH C S SREEKUTTY">KASHINADH C S SREEKUTTY</option>
+                <option value="KASHINADH S N">KASHINADH S N</option>
+                <option value="KASHINATH S S">KASHINATH S S</option>
+                <option value="MADHAV A S">MADHAV A S</option>
+                <option value="MANOJ">MANOJ</option>
+                <option value="MIDHUN">MIDHUN</option>
+                <option value="NIHARA R B">NIHARA R B</option>
+                <option value="NIRANJAN B A">NIRANJAN B A</option>
+                <option value="RAHUL KRISHNA">RAHUL KRISHNA</option>
+                <option value="RAJATH KRISHNA">RAJATH KRISHNA</option>
+                <option value="SABARI S">SABARI S</option>
+                <option value="SANJAY SANTHOSH">SANJAY SANTHOSH</option>
+                <option value="SANUSH">SANUSH</option>
+                <option value="SARGA C S">SARGA C S</option>
+                <option value="SIDHARTH P NAIR">SIDHARTH P NAIR</option>
+                <option value="SIDHARTH S">SIDHARTH S</option>
+                <option value="SIVADATH B">SIVADATH B</option>
+                <option value="SIVARATH L">SIVARATH L</option>
+                <option value="SOORYANARAYANAN">SOORYANARAYANAN</option>
+                <option value="SREEHARI A M">SREEHARI A M</option>
+                <option value="SREEHARI G M">SREEHARI G M</option>
+                <option value="THEJAS">THEJAS</option>
+                <option value="VAISHNAV M C">VAISHNAV M C</option>
+                <option value="VAISHNAV V">VAISHNAV V</option>
+                <option value="VIDHUKRISHNAN P">VIDHUKRISHNAN P</option>
+                <option value="VIGNESH S A">VIGNESH S A</option>
+                <option value="DEVANAND V S">DEVANAND V S</option>
+                <option value="VAIBHAV V">VAIBHAV V</option>
+                <option value="PRATHISH S">PRATHISH S</option>
+            </select>
+            <button type="button" onclick="checkReport()">Check Report</button>
+        </form>
+
+        <div id="pdfSection">
+            <h3 style="color: purple;">Pending Fee Report</h3>
+            <iframe id="pdfViewer" src="" frameborder="0" style="width: 100%; height: 500px; border: 1px solid #ccc; border-radius: 10px;"></iframe>
+        </div>        
+    </div>
+
+    <script>
+        const pdfFiles = {
+    "ABHAYJITH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ABHAYJITH.pdf",
+    "ABHIJITH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ABHIJITH.pdf",
+    "ABHIMANYU": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ABHIMANYU.pdf",
+    "ABHINAV KIRAN": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ABHINAV%20KIRAN.pdf",
+    "ADIDEV S G": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADIDEV%20S%20G.pdf",
+    "ADIRATH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADIRATH.pdf",
+    "ADITHAYAN A S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHAYAN%20A%20S.pdf",
+    "ADITHYA A ABHILASH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYA%20A%20ABHILASH.pdf",
+    "ADITHYAN A": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYAN%20A.pdf",
+    "ADITHYAN B S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYAN%20B%20S.pdf",
+    "ADITHYAN R S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYAN%20R%20S.pdf",
+    "ADITHYAN S M": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYAN%20S%20M.pdf",
+    "ADWAITH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADWAITH.pdf",
+    "ADWAITH R P": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADWAITH%20R%20P.pdf",
+    "AKHIL B": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/AKHIL%20B.pdf",
+    "AKHIL SANTHOSH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/AKHIL%20SANTHOSH.pdf",
+    "ANANTHAKRISHNAN S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ANANTHAKRISHNAN%20S.pdf",
+    "ANU": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ANU.pdf",
+    "ARAV SHANKAR A": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARAV%20SHANKAR%20A.pdf",
+    "ARAVIND": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARAVIND.pdf",
+    "ARJUN R": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARJUN%20R.pdf",
+    "ARUSH P R": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARUSH%20P%20R.pdf",
+    "ARYA A": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARYA%20A.pdf",
+    "ASWANTH B": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ASWANTH%20B.pdf",
+    "ASWIN R": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ASWIN%20R.pdf",
+    "ASWIN V": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ASWIN%20V.pdf",
+    "ATHUL A M": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ATHUL%20A%20M.pdf",
+    "ATHUL A S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ATHUL%20A%20S.pdf",
+    "DEVA NAND PRADEEP": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DEVA%20NAND%20PRADEEP.pdf",
+    "DEVA NARAYANAN": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DEVA%20NARAYANAN.pdf",
+    "DEVANANDA P": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DEVANANDA%20P.pdf",
+    "DEVA NAND M R": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DEVA%20NAND%20M%20R.pdf",
+    "DIPIN D": "https://drive.google.com/file/d/1Eek3xzIIsfjNW3g1LVPM10hWQakZ-_S0/view?usp=drive_link",
+    "DRUV HARI M": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DRUV%20HARI%20M.pdf",
+    "DYAN HARI M": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DYAN%20HARI%20M.pdf",
+    "GURUMITHRAN D L": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/GURUMITHRAN%20D%20L.pdf",
+    "JANADATHAN D L": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/JANADATHAN%20D%20L.pdf",
+    "KASHINADH C S SREEKUTTY": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/KASHINADH%20C%20S%20SREEKUTTY.pdf",
+    "KASHINADH S N": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/KASHINADH%20S%20N.pdf",
+    "KASHINATH S S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/KASHINATH%20S%20S.pdf",
+    "MADHAV A S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/MADHAV%20A%20S.pdf",
+    "MANOJ": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/MANOJ.pdf",
+    "MIDHUN": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/MIDHUN.pdf",
+    "NIHARA R B": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/NIHARA%20R%20B.pdf",
+    "NIRANJAN B A": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/NIRANJAN%20B%20A.pdf",
+    "RAHUL KRISHNA": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/RAHUL%20KRISHNA.pdf",
+    "RAJATH KRISHNA": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/RAJATH%20KRISHNA.pdf",
+
+            // Add mappings for all other students here...
+        };
+
+        function checkReport() {
+            const studentId = document.getElementById("studentId").value;
+
+            if (!studentId) {
+                alert("Please select a student name!");
+                return;
+            }
+
+            const pdfSection = document.getElementById("pdfSection");
+            const pdfViewer = document.getElementById("pdfViewer");
+
+            if (pdfFiles[studentId]) {
+                pdfViewer.src = pdfFiles[studentId];
+                pdfSection.style.display = "block";
+            } else {
+                alert("No report available for the selected student.");
+                pdfSection.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
