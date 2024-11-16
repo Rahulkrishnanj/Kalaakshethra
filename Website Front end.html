@@ -168,77 +168,37 @@
     </div>
 
     <script>
-        const pdfFiles = {
-    "ABHAYJITH": "https://files.yappe.in/place/full/pulimathoor-mahadeva-temple-9984549.webp",
-    "ABHIJITH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ABHIJITH.pdf",
-    "ABHIMANYU": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ABHIMANYU.pdf",
-    "ABHINAV KIRAN": "https://drive.google.com/drive/u/4/folders/19ovlZVyls4Ke3SvaLI2iJeWoNmgQWnKI",
-    "ADIDEV S G": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADIDEV%20S%20G.pdf",
-    "ADIRATH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADIRATH.pdf",
-    "ADITHAYAN A S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHAYAN%20A%20S.pdf",
-    "ADITHYA A ABHILASH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYA%20A%20ABHILASH.pdf",
-    "ADITHYAN A": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYAN%20A.pdf",
-    "ADITHYAN B S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYAN%20B%20S.pdf",
-    "ADITHYAN R S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYAN%20R%20S.pdf",
-    "ADITHYAN S M": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADITHYAN%20S%20M.pdf",
-    "ADWAITH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADWAITH.pdf",
-    "ADWAITH R P": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ADWAITH%20R%20P.pdf",
-    "AKHIL B": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/AKHIL%20B.pdf",
-    "AKHIL SANTHOSH": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/AKHIL%20SANTHOSH.pdf",
-    "ANANTHAKRISHNAN S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ANANTHAKRISHNAN%20S.pdf",
-    "ANU": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ANU.pdf",
-    "ARAV SHANKAR A": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARAV%20SHANKAR%20A.pdf",
-    "ARAVIND": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARAVIND.pdf",
-    "ARJUN R": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARJUN%20R.pdf",
-    "ARUSH P R": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARUSH%20P%20R.pdf",
-    "ARYA A": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ARYA%20A.pdf",
-    "ASWANTH B": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ASWANTH%20B.pdf",
-    "ASWIN R": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ASWIN%20R.pdf",
-    "ASWIN V": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ASWIN%20V.pdf",
-    "ATHUL A M": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ATHUL%20A%20M.pdf",
-    "ATHUL A S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/ATHUL%20A%20S.pdf",
-    "DEVA NAND PRADEEP": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DEVA%20NAND%20PRADEEP.pdf",
-    "DEVA NARAYANAN": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DEVA%20NARAYANAN.pdf",
-    "DEVANANDA P": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DEVANANDA%20P.pdf",
-    "DEVA NAND M R": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DEVA%20NAND%20M%20R.pdf",
-    "DIPIN D": "https://drive.google.com/file/d/1Eek3xzIIsfjNW3g1LVPM10hWQakZ-_S0/view?usp=drive_link",
-    "DRUV HARI M": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DRUV%20HARI%20M.pdf",
-    "DYAN HARI M": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/DYAN%20HARI%20M.pdf",
-    "GURUMITHRAN D L": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/GURUMITHRAN%20D%20L.pdf",
-    "JANADATHAN D L": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/JANADATHAN%20D%20L.pdf",
-    "KASHINADH C S SREEKUTTY": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/KASHINADH%20C%20S%20SREEKUTTY.pdf",
-    "KASHINADH S N": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/KASHINADH%20S%20N.pdf",
-    "KASHINATH S S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/KASHINATH%20S%20S.pdf",
-    "MADHAV A S": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/MADHAV%20A%20S.pdf",
-    "MANOJ": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/MANOJ.pdf",
-    "MIDHUN": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/MIDHUN.pdf",
-    "NIHARA R B": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/NIHARA%20R%20B.pdf",
-    "NIRANJAN B A": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/NIRANJAN%20B%20A.pdf",
-    "RAHUL KRISHNA": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/RAHUL%20KRISHNA.pdf",
-    "RAJATH KRISHNA": "file:///D:/Kalakshethra%20chenda%20class/PENDING%20FEE%20REPORT/RAJATH%20KRISHNA.pdf",
+        const baseURL = "https://raw.github.com/Rahulkrishnanj/Chendaclass/main/";
+        const students = [
+            "ABHAYJITH", "ABHIJITH", "ABHIMANYU", "ABHINAV KIRAN", "ADIDEV S G", 
+            "ADIRATH", "ADITHAYAN A S", "ADITHYA A ABHILASH", "ADITHYAN A", 
+            "ADITHYAN B S", "ADITHYAN R S", "ADITHYAN S M", "ADWAITH", 
+            "ADWAITH R P", "AKHIL B", "AKHIL SANTHOSH", "ANANTHAKRISHNAN S", 
+            "ANU", "ARAV SHANKAR A", "ARAVIND", "ARJUN R", "ARUSH P R", 
+            "ARYA A", "ASWANTH B", "ASWIN R", "ASWIN V", "ATHUL A M", 
+            "ATHUL A S", "DEVA NAND PRADEEP", "DEVA NARAYANAN", "DEVANANDA P", 
+            "DEVA NAND M R", "DIPIN D", "DRUV HARI M", "DYAN HARI M", 
+            "GURUMITHRAN D L", "JANADATHAN D L", "KASHINADH C S SREEKUTTY", 
+            "KASHINADH S N", "KASHINATH S S", "MADHAV A S", "MANOJ", 
+            "MIDHUN", "NIHARA R B", "NIRANJAN B A", "RAHUL KRISHNA", 
+            "RAJATH KRISHNA", "SABARI S", "SANJAY SANTHOSH", "SANUSH", 
+            "SARGA C S", "SIDHARTH P NAIR", "SIDHARTH S", "SIVADATH B", 
+            "SIVARATH L", "SOORYANARAYANAN", "SREEHARI A M", "SREEHARI G M", 
+            "THEJAS", "VAISHNAV M C", "VAISHNAV V", "VIDHUKRISHNAN P", 
+            "VIGNESH S A", "DEVANAND V S", "VAIBHAV V", "PRATHISH S"
+        ];
 
-            // Add mappings for all other students here...
-        };
+        const studentList = document.getElementById("studentList");
 
-        function checkReport() {
-            const studentId = document.getElementById("studentId").value;
-
-            if (!studentId) {
-                alert("Please select a student name!");
-                return;
-            }
-
-            const pdfSection = document.getElementById("pdfSection");
-            const pdfViewer = document.getElementById("pdfViewer");
-
-            if (pdfFiles[studentId]) {
-                pdfViewer.src = pdfFiles[studentId];
-                pdfSection.style.display = "block";
-            } else {
-                alert("No report available for the selected student.");
-                pdfSection.style.display = "none";
-            }
-        }
+        students.forEach(student => {
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = `${baseURL}${encodeURIComponent(student)}.pdf`;
+            link.textContent = `${student}'s PDF`;
+            link.target = "_blank"; // Opens in a new tab
+            listItem.appendChild(link);
+            studentList.appendChild(listItem);
+        });
     </script>
 </body>
 </html>
